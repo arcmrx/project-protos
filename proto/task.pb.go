@@ -4,7 +4,7 @@
 // 	protoc        v5.29.3
 // source: proto/task.proto
 
-package task
+package proto
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -455,7 +455,7 @@ const file_proto_task_proto_rawDesc = "" +
 	"UpdateTask\x12\x17.task.UpdateTaskRequest\x1a\n" +
 	".task.Task\x12?\n" +
 	"\n" +
-	"DeleteTask\x12\x17.task.DeleteTaskRequest\x1a\x18.task.DeleteTaskResponseB-Z+github.com/arcmrx/project-protos/proto/taskb\x06proto3"
+	"DeleteTask\x12\x17.task.DeleteTaskRequest\x1a\x18.task.DeleteTaskResponseB(Z&github.com/arcmrx/project-protos/protob\x06proto3"
 
 var (
 	file_proto_task_proto_rawDescOnce sync.Once

@@ -4,7 +4,7 @@
 // 	protoc        v5.29.3
 // source: proto/user.proto
 
-package user
+package proto
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -456,7 +456,7 @@ const file_proto_user_proto_rawDesc = "" +
 	".user.User\x12?\n" +
 	"\n" +
 	"DeleteUser\x12\x17.user.DeleteUserRequest\x1a\x18.user.DeleteUserResponse\x12<\n" +
-	"\tListUsers\x12\x16.user.ListUsersRequest\x1a\x17.user.ListUsersResponseB-Z+github.com/arcmrx/project-protos/proto/userb\x06proto3"
+	"\tListUsers\x12\x16.user.ListUsersRequest\x1a\x17.user.ListUsersResponseB(Z&github.com/arcmrx/project-protos/protob\x06proto3"
 
 var (
 	file_proto_user_proto_rawDescOnce sync.Once
