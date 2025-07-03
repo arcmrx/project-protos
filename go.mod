@@ -1,4 +1,4 @@
-module github.com/arcmrx/project-prot
+module github.com/arcmrx/project-protos
 
 go 1.24.0
 
