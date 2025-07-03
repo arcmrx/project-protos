@@ -1,4 +1,4 @@
-PROTOS  := proto/*.proto
+PROTOS  := proto/*/*.proto
 OUT_DIR := .
 
 generate:
