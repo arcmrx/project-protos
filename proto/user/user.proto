@@ -12,12 +12,17 @@ message User {
 message CreateUserRequest {
   string email = 1;
 }
+
 message CreateUserResponse {
   User user = 1;
 }
 
 message GetUserRequest {
   string id = 1;
+}
+
+message GetUserResponse {
+  User user = 1;
 }
 
 message ListUsersRequest {
@@ -28,6 +33,10 @@ message ListUsersResponse {
 }
 
 message UpdateUserRequest {
+  string id = 1;
+}
+
+message UpdateUserResponse {
   User user = 1;
 }
 
@@ -41,8 +50,8 @@ message DeleteUserResponse {
 
 service UserService {
   rpc CreateUser (CreateUserRequest) returns (CreateUserResponse);
-  rpc GetUser    (GetUserRequest)    returns (User);
-  rpc UpdateUser (UpdateUserRequest) returns (User);
+  rpc GetUser    (GetUserRequest)    returns (GetUserResponse);
+  rpc UpdateUser (UpdateUserRequest) returns (UpdateUserResponse);
   rpc DeleteUser (DeleteUserRequest) returns (DeleteUserResponse);
   rpc ListUsers  (ListUsersRequest)  returns (ListUsersResponse);
 }
