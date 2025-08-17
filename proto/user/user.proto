@@ -2,7 +2,7 @@ syntax = "proto3";
 package user;
 option go_package = "github.com/arcmrx/project-protos/proto/user";
 
-// Сущность пользователь (минимум полей)
+// Сущность пользователь
 message User {
   string id    = 1; 
   string email = 2;
