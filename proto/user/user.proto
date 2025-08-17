@@ -2,13 +2,11 @@ syntax = "proto3";
 package user;
 option go_package = "github.com/arcmrx/project-protos/proto/user";
 
-// Сущность пользователь
 message User {
   string id    = 1; 
   string email = 2;
 }
 
-// Запрос на создание
 message CreateUserRequest {
   string email = 1;
 }
@@ -46,7 +44,6 @@ message DeleteUserRequest {
 }
 
 message DeleteUserResponse {
-  User user = 1;
 }
 
 service UserService {

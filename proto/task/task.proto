@@ -2,7 +2,6 @@ syntax = "proto3";
 package task;
 option go_package = "github.com/arcmrx/project-protos/proto/task";
 
-// Сущность задачи
 message Task {
   string id = 1;
   string title = 2;
@@ -20,6 +19,10 @@ message GetTaskRequest {
   string id = 1;
 }
 
+message GetTaskResponse {
+  Task task = 1;
+}
+
 message ListTasksRequest {
 }
 
@@ -28,6 +31,11 @@ message ListTasksResponse {
 }
 
 message UpdateTaskRequest {
+  string id = 1;
+  string title = 2;
+}
+
+message UpdateTaskResponse {
   Task task = 1;
 }
 
@@ -36,7 +44,6 @@ message DeleteTaskRequest {
 }
 
 message DeleteTaskResponse {
-  Task task = 1;
 }
 
 service TaskService {
