@@ -34,7 +34,7 @@ message ListUsersResponse {
 
 message UpdateUserRequest {
   string id = 1;
-  User user = 2;
+  string email = 2;
 }
 
 message UpdateUserResponse {
