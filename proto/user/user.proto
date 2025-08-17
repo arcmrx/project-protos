@@ -33,7 +33,7 @@ message ListUsersResponse {
 }
 
 message UpdateUserRequest {
-  User user = 1;
+  string id = 1;
 }
 
 message UpdateUserResponse {
