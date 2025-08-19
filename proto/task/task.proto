@@ -3,12 +3,14 @@ package task;
 option go_package = "github.com/arcmrx/project-protos/proto/task";
 
 message Task {
-  string id = 1;
-  string title = 2;
+  string userId = 1;
+  string taskId = 2;
+  string title = 3;
 }
 
 message CreateTaskRequest {
-  string title = 1;
+  string userId = 1;
+  string title = 2;
 }
 
 message CreateTaskResponse {
@@ -16,7 +18,7 @@ message CreateTaskResponse {
 }
 
 message GetTaskRequest {
-  string id = 1;
+  string taskId = 1;
 }
 
 message GetTaskResponse {
@@ -30,8 +32,16 @@ message ListTasksResponse {
   repeated Task tasks = 1;
 }
 
+message ListTasksByUserRequest {
+  string userId = 1;
+}
+
+message ListTasksByUserResponse {
+  repeated Task tasks = 1;
+}
+
 message UpdateTaskRequest {
-  string id = 1;
+  string taskId = 1;
   string title = 2;
 }
 
@@ -40,7 +50,7 @@ message UpdateTaskResponse {
 }
 
 message DeleteTaskRequest {
-  string id = 1;
+  string taskId = 1;
 }
 
 message DeleteTaskResponse {
@@ -48,8 +58,9 @@ message DeleteTaskResponse {
 
 service TaskService {
   rpc CreateTask (CreateTaskRequest) returns (CreateTaskResponse);
-  rpc GetTask    (GetTaskRequest)    returns (Task);
+  rpc GetTask    (GetTaskRequest)    returns (GetTaskResponse);
   rpc ListTasks  (ListTasksRequest)  returns (ListTasksResponse);
-  rpc UpdateTask (UpdateTaskRequest) returns (Task);
+  rpc ListTasksByUser (ListTasksByUserRequest) returns (ListTasksByUserResponse);
+  rpc UpdateTask (UpdateTaskRequest) returns (UpdateTaskResponse);
   rpc DeleteTask (DeleteTaskRequest) returns (DeleteTaskResponse);
 }
