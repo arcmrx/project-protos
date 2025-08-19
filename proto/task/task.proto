@@ -6,6 +6,7 @@ message Task {
   string userId = 1;
   string taskId = 2;
   string title = 3;
+  bool isDone = 4;
 }
 
 message CreateTaskRequest {
@@ -43,6 +44,7 @@ message ListTasksByUserResponse {
 message UpdateTaskRequest {
   string taskId = 1;
   string title = 2;
+  bool isDone = 3;
 }
 
 message UpdateTaskResponse {

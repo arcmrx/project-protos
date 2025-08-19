@@ -26,6 +26,7 @@ type Task struct {
 	UserId        string                 `protobuf:"bytes,1,opt,name=userId,proto3" json:"userId,omitempty"`
 	TaskId        string                 `protobuf:"bytes,2,opt,name=taskId,proto3" json:"taskId,omitempty"`
 	Title         string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	IsDone        bool                   `protobuf:"varint,4,opt,name=isDone,proto3" json:"isDone,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -79,6 +80,13 @@ func (x *Task) GetTitle() string {
 		return x.Title
 	}
 	return ""
+}
+
+func (x *Task) GetIsDone() bool {
+	if x != nil {
+		return x.IsDone
+	}
+	return false
 }
 
 type CreateTaskRequest struct {
@@ -437,6 +445,7 @@ type UpdateTaskRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	TaskId        string                 `protobuf:"bytes,1,opt,name=taskId,proto3" json:"taskId,omitempty"`
 	Title         string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	IsDone        bool                   `protobuf:"varint,3,opt,name=isDone,proto3" json:"isDone,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -483,6 +492,13 @@ func (x *UpdateTaskRequest) GetTitle() string {
 		return x.Title
 	}
 	return ""
+}
+
+func (x *UpdateTaskRequest) GetIsDone() bool {
+	if x != nil {
+		return x.IsDone
+	}
+	return false
 }
 
 type UpdateTaskResponse struct {
@@ -613,11 +629,12 @@ var File_proto_task_task_proto protoreflect.FileDescriptor
 
 const file_proto_task_task_proto_rawDesc = "" +
 	"\n" +
-	"\x15proto/task/task.proto\x12\x04task\"L\n" +
+	"\x15proto/task/task.proto\x12\x04task\"d\n" +
 	"\x04Task\x12\x16\n" +
 	"\x06userId\x18\x01 \x01(\tR\x06userId\x12\x16\n" +
 	"\x06taskId\x18\x02 \x01(\tR\x06taskId\x12\x14\n" +
-	"\x05title\x18\x03 \x01(\tR\x05title\"A\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12\x16\n" +
+	"\x06isDone\x18\x04 \x01(\bR\x06isDone\"A\n" +
 	"\x11CreateTaskRequest\x12\x16\n" +
 	"\x06userId\x18\x01 \x01(\tR\x06userId\x12\x14\n" +
 	"\x05title\x18\x02 \x01(\tR\x05title\"4\n" +
@@ -637,10 +654,11 @@ const file_proto_task_task_proto_rawDesc = "" +
 	"\x06userId\x18\x01 \x01(\tR\x06userId\";\n" +
 	"\x17ListTasksByUserResponse\x12 \n" +
 	"\x05tasks\x18\x01 \x03(\v2\n" +
-	".task.TaskR\x05tasks\"A\n" +
+	".task.TaskR\x05tasks\"Y\n" +
 	"\x11UpdateTaskRequest\x12\x16\n" +
 	"\x06taskId\x18\x01 \x01(\tR\x06taskId\x12\x14\n" +
-	"\x05title\x18\x02 \x01(\tR\x05title\"4\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12\x16\n" +
+	"\x06isDone\x18\x03 \x01(\bR\x06isDone\"4\n" +
 	"\x12UpdateTaskResponse\x12\x1e\n" +
 	"\x04task\x18\x01 \x01(\v2\n" +
 	".task.TaskR\x04task\"+\n" +
